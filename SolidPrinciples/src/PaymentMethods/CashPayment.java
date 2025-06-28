@@ -1,6 +1,7 @@
 package PaymentMethods;
 
 import Library.EnumPaymentMode.PaymentMode;
+import PaymentProcessing.InvalidAmountException;
 
 public class CashPayment extends PaymentMethod {
 	
@@ -9,13 +10,9 @@ public class CashPayment extends PaymentMethod {
 		super(PaymentMode.CASH);
 	}
 
-	@Override
-	public boolean makePayment(double dAmt) {
-		printMessage();
-		if(dAmt>0)
-			return true;
-		else
-			return false;
-	}
+//	@Override
+//	public void makePayment(double dAmt) throws InvalidAmountException {
+//		printSuccessMessage();
+//	}
 	
 }

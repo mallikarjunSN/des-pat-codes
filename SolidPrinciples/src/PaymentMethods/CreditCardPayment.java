@@ -1,6 +1,7 @@
 package PaymentMethods;
 
 import Library.EnumPaymentMode.PaymentMode;
+import PaymentProcessing.InvalidAmountException;
 
 public class CreditCardPayment extends PaymentMethod {
 
@@ -9,12 +10,8 @@ public class CreditCardPayment extends PaymentMethod {
 	}
 
 	@Override
-	public boolean makePayment(double dAmt) {
-		printMessage();
-		if(dAmt>0)
-			return true;
-		else
-			return false;
+	public void makePayment(double dAmt) throws InvalidAmountException {
+		printSuccessMessage();
 	}
 
 }

@@ -21,29 +21,19 @@ public class PaymentProcessor {
 			
 			System.out.println("Enter amount for cash payment : ");
 			dAmount = sc.nextDouble();
-			if(cp.makePayment(dAmount)) {
-				System.out.print("Payment Successful!!");
-			}else {
-				System.out.print("Payment Failed!!\n Invalid Amount");
-			}
+			cp.makePayment(dAmount);
 			
 			
 			System.out.println("Enter amount for Credit Card payment : ");
 			dAmount = sc.nextDouble();
-			if(ccp.makePayment(dAmount)) {
-				System.out.print("Payment Successful!!");
-			}else {
-				System.out.print("Payment Failed!!\n Invalid Amount");
-			}
+			ccp.makePayment(dAmount);
 			
 			System.out.println("Enter amount for UPI payment : ");
 			dAmount = sc.nextDouble();
-			if(up.makePayment(dAmount)) {
-				System.out.print("Payment Successful!!");
-			}else {
-				System.out.print("Payment Failed!!\n Invalid Amount");
-			}
-			
+			up.makePayment(dAmount);
+		}
+		catch(InvalidAmountException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }
